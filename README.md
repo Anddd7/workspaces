@@ -45,9 +45,13 @@ e.g. go1.18, go1.20, java11
 
 - github_golang
   - dev environment for open-source repos, e.g. kubernetes/nocalhost/terraform
+  - create environment and clone repos inside container
 - github_react
   - dev env for frontend repos
-
+  - create environment and clone repos inside container
+- github_react
+  - TODO
+  
 ### Projects (confidential)
 
 - dsxxxx
@@ -59,3 +63,5 @@ e.g. go1.18, go1.20, java11
 
 - vscode 中国区下载加速  
   - 将 host 改成 `vscode.cdn.azure.cn`
+- share ssh to containers
+  - `ssh-add $HOME/.ssh/github_rsa`
