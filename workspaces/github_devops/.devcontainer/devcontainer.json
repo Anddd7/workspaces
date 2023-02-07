@@ -1,19 +1,19 @@
 {
-    "name": "github_golang",
+    "name": "github_devops",
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     // Features to add to the dev container. More info: https://containers.dev/features.
     "features": {
         // https://github.com/devcontainers/features/tree/main/src/common-utils
         "ghcr.io/devcontainers/features/common-utils:2": {},
-        // https://github.com/devcontainers/features/tree/main/src/go
-        "ghcr.io/devcontainers/features/go:1": {
-            "version": "1.19"
-        }
+        "ghcr.io/devcontainers/features/aws-cli:1": {},
+        "ghcr.io/devcontainers/features/azure-cli:1": {},
+        "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+        "ghcr.io/devcontainers/features/terraform:1": {}
     },
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
     // Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "go version",
+    // "postCreateCommand": "",
     // Configure tool-specific properties.
     // "customizations": {},
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.

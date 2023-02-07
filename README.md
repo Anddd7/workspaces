@@ -27,7 +27,7 @@ e.g. go1.18, go1.20, java11
 - use go to download/install tools (or output the help links)
 - use go to create dev environments with Dockerfile, devcontainers.json
 
-## Workspace
+## Workspaces
 
 ### Local
 
@@ -37,24 +37,29 @@ e.g. go1.18, go1.20, java11
 - Windows
   - play games :)
 
+> install via `.setup`
+
 ### Devcontainers
 
 - workspaces (current)
   - learning, research, test and verify the solutions
   - multiple language, always latest version
-
 - github_golang
   - dev environment for open-source repos, e.g. kubernetes/nocalhost/terraform
   - create environment and clone repos inside container
-- github_react
+- github_node
   - dev env for frontend repos
   - create environment and clone repos inside container
-- github_react
-  - TODO
-  
-### Projects (confidential)
+- github_java
+  - ...
+- github_devops
+  - ...
 
-- dsxxxx
+> install via `workspaces/*/.devcontainer`
+  
+### Devcontainers for (confidential) Projects
+
+- xxxxxx
   - (TODO: still in macos, need to migrate to devcontainers)
   - individual vscode profile (enable/disable extensions)
   - individual devcontainers with all required tools
