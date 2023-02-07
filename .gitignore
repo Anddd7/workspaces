@@ -1,5 +1,3 @@
-bin
+.DS_STORE
 
-
-
-.vscode
+golang-quick-start

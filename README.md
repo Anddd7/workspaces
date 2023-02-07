@@ -21,7 +21,6 @@ create development environment for projects, can reuse, extend, modify and delet
 
 e.g. go1.18, go1.20, java11
 
-
 ## Techstack
 
 - use toml to descrip tools and dev environments
