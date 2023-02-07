@@ -1,0 +1,25 @@
+[iterm2]
+recommend = 0
+description = "https://iterm2.com/downloads.html"
+
+[vscode]
+recommend = 0
+description = "https://code.visualstudio.com/download"
+
+# -----------------------------
+
+
+[zsh]
+recommend = 0
+install = 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+configurations = """
+plugins = (git zsh-autosuggestions zsh-z)
+"""
+
+[colima]
+recommend = 0
+install = "brew install colima"
+
+[docker]
+recommend = 0
+install = "brew install docker docker-compose"

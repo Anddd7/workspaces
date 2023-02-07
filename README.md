@@ -1,92 +1,44 @@
-# workspaces
+# workspaces: standard your development environment
 
-- 配置开发主机
-- 配置开发环境（共用的和非共用的）
+- OS
+  - macos
+  - windows/wsl
+- plugins
+  - os tools
+  - dev environment (via devcontainers)
 
-- Platform
-  - MacOS
-  - Windows(+wsl)
-- Tools
-  - UI tools
-    - IDE
-    - Others
-  - Command line tools
-  - Others
+## Defination
 
-# tech stack
+### OS Tools
 
-- toml, go
+installed in the specific OS via command line or installer
 
-```
-asdf {
-  golang {
-    macos {
-      pre { brew install coreutils }
-      install { 
-        asdf plugin-add golang https://github.com/kennyp/asdf-golang.git 
-        asdf install golang 
-      }
-      post { }
-    }
-    help { https://github.com/kennyp/asdf-golang }
-  }
-  help { https://github.com/asdf-vm/asdf }
-}
-```
+e.g. VSCode, Fig, 1password, docker
 
-```toml
-<!-- base -->
-[golang]
-provider=asdf
+### Dev Environment
+
+create development environment for projects, can reuse, extend, modify and delete quickly with docker(devcontainers)
+
+e.g. go1.18, go1.20, java11
 
 
-<!-- macos -->
-[golang]
-```
+## Techstack
 
-# use
+- use toml to descrip tools and dev environments
+- use go to download/install tools (or output the help links)
+- use go to create dev environments with Dockerfile, devcontainers.json
 
-```shell
-workspaces init 
-workspaces plan
-workspaces apply
-workspaces <plugin> install 
-workspaces <plugin> uninstall
-```
+## Notes
 
-# others
-
-- 使用场景  
-  - 拿到一台新机器 不同系统 安装必要和软件  
-  - 开启一个新项目 下载必要的依赖  
--  
-- toml 定义ui工具和命令行工具清单  
-- 通过统一入口下载必要  
--  
--  
--  
--  
 - VSCode 中国区下载加速  
   - 将地址中的`/stable`前换成`vscode.cdn.azure.cn`  
--  
-- Linx  
-  - 语言环境  
-    - 统一使用 [asdf-vm](https://asdf-vm.com/manage/versions.html#install-version) 管理可能出现多版本的东西  
-      - *木有国内源*  
-    - jvm 系  
-      - java8, 11, 17  
-      - clojure, lein  
-    - go  
-    - rust  
-    - python, pip  
-    - node, npm, yarn  
+- Linux  
   - 开发工具  
     - zsh, oh-my-zsh  
     - docker  
     - minikube  
     - vscode  
 - Mac  
-  - 语言环境 - 同 Linux  
   - 开发工具 - 同 Linux  
     - docker  
       - Docker for Desktop(只能个人使用) [商用不再免费](https://www.docker.com/blog/updating-product-subscriptions/)  
