@@ -6,15 +6,16 @@ description = "https://iterm2.com/downloads.html"
 recommend = 0
 description = "https://code.visualstudio.com/download"
 
-# -----------------------------
+[hammerspoon]
+recommend = 0
+description="https://www.hammerspoon.org/"
 
+# -----------------------------
 
 [zsh]
 recommend = 0
 install = 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
-configurations = """
-plugins = (git zsh-autosuggestions zsh-z)
-"""
+post = "./zsh/post.sh"
 
 [colima]
 recommend = 0
