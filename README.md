@@ -70,3 +70,5 @@ e.g. go1.18, go1.20, java11
   - 将 host 改成 `vscode.cdn.azure.cn`
 - share ssh to containers
   - `ssh-add $HOME/.ssh/github_rsa`
+- build containers via cli
+  - `devcontainer build --workspace-folder .`
