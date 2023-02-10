@@ -64,6 +64,20 @@ e.g. go1.18, go1.20, java11
   - individual vscode profile (enable/disable extensions)
   - individual devcontainers with all required tools
 
+## How to start
+
+- `cd workspaces/github_golang`
+- `devcontainer up --workspace-folder .`
+
+### Customize
+
+- Quick Start
+  - prebuild images: <https://github.com/devcontainers/images/tree/main/src>
+  - prebuild features: <https://containers.dev/features>
+- Advance
+  - Add shell script under workspace, find and exec it inside container path `/devcontainer`
+  - Start with dockerfile
+
 ## Checklist
 
 - vscode 中国区下载加速  
