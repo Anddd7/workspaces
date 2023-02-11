@@ -1,35 +1,47 @@
-# workspaces: standard your development environment
+# Setup your workspaces via code (Workspace as Code ??)
 
-- OS
-  - macos
-  - windows/wsl
-- plugins
-  - os tools
-  - dev environment (via devcontainers)
+![devcontainers](https://user-images.githubusercontent.com/24785373/218241704-668e2384-8381-4003-8405-cbe757cd7721.png)
 
-## Defination
+Describe and manage your workspace (PC, Applications, CLIs, Environment and Projects)
 
-### OS Tools
+e.g. Clone and work on projects at MacBook and Windows(WSL)
+e.g. Start a new project & leave a project
+e.g. Help junior to setup the environment
 
-installed in the specific OS via command line or installer
+How to keep your computer clear? How to quick setup the dev environments?
+
+> Intro: [“在我的电脑上明明可以的” — 图解 DevContainer 构建干净的开发环境](https://zhuanlan.zhihu.com/p/604545087)
+
+## What should have in a developer workspace?
+
+### Global tools
+
+installed in the specific OS via command line or installer, for common use scenarios.
 
 e.g. VSCode, Fig, 1password, docker
+e.g. brew, zsh, git
 
-### Dev Environment
+### Project (Dev) Environment
 
-create development environment for projects, can reuse, extend, modify and delete quickly with docker(devcontainers)
+a development environment for a project, e.g. sdk, packages, cli.
+project members need to configure such an environment in order to develop.
 
 e.g. go1.18, go1.20, java11
+e.g. a web application with postgres
 
-## Techstack
+## Expectation
 
-- use toml to descrip tools and dev environments
-- use go to download/install tools (or output the help links)
-- use go to create dev environments with Dockerfile, devcontainers.json
+All those thing can reuse, extend, modify and delete quickly in cross-platform.
 
-## Workspaces
+### Solutions - v1
 
-### Local
+- devcontainer (with VSCode Plugin)
+- a cli to list and install tools base on a configuration file
+- ...
+
+### 'Workspaces' Definition
+
+#### Local (host on OS)
 
 - MacOS
   - take notes or write blogs in markdown or plaintext
@@ -38,10 +50,13 @@ e.g. go1.18, go1.20, java11
   - play games :)
 
 > install via `.setup`
+> TODO a self-built tool to download and install local tools
 
-### Devcontainers
+#### Project/Dev Environment
 
-- workspaces (current)
+Create different containers for different purposes with devcontainers.
+
+- workspaces (just for demo and tutorial)
   - learning, research, test and verify the solutions
   - multiple language, always latest version
 - github_golang
@@ -54,35 +69,67 @@ e.g. go1.18, go1.20, java11
   - ...
 - github_devops
   - ...
-
-> install via `workspaces/*/.devcontainer`
-  
-### Devcontainers for (confidential) Projects
-
-- xxxxxx
-  - (TODO: still in macos, need to migrate to devcontainers)
+- project_confidential_xxxx
   - individual vscode profile (enable/disable extensions)
   - individual devcontainers with all required tools
+  - can be easily modified or delete
 
-## How to start
+> install via `workspaces/*/.devcontainer`
 
-- `cd workspaces/github_golang`
-- `devcontainer up --workspace-folder .`
+``` shell
+cd workspaces/github_golang
+devcontainer up --workspace-folder .
+```
 
-### Customize
+## Cheatsheet
 
-- Quick Start
-  - prebuild images: <https://github.com/devcontainers/images/tree/main/src>
-  - prebuild features: <https://containers.dev/features>
-- Advance
-  - Add shell script under workspace, find and exec it inside container path `/devcontainer`
-  - Start with dockerfile
+- Download VSCode in china, modify host to `vscode.cdn.azure.cn` to speed up
 
-## Checklist
+## Cheatsheet for devcontainers
 
-- vscode 中国区下载加速  
-  - 将 host 改成 `vscode.cdn.azure.cn`
-- share ssh to containers
+- Quick start with a prebuild images and features
+  - <https://github.com/devcontainers/images/tree/main/src>
+  - <https://containers.dev/features>
+- Share ssh credentials to containers
   - `ssh-add $HOME/.ssh/github_rsa`
-- build containers via cli
+- Install devcontainer cli to build/up, more quick starting with docker image
   - `devcontainer build --workspace-folder .`
+  - `devcontainer up --workspace-folder .`
+- Add shell script under workspace, find and exec it inside container path `/devcontainer`
+  - Start with dockerfile
+- Create a named volume for each container, 'persist' your workspace to avoid deletion during rebuild container
+
+  - ```json
+    {
+      "workspaceMount": "source=devcontainers_github_golang,target=/workspaces,type=volume",
+      "workspaceFolder": "/workspaces"
+    }
+
+  ```json
+
+- Mount the post-script (any your need in host) to container, you can edit once and find it and exec in every container
+
+  - ```json
+    {
+      "mounts": [
+        "source=.,target=/devcontainer,type=bind,consistency=cached"
+      ],
+    }
+
+  ```json
+
+## Example
+
+![build-cli](./docs/build-cli.png)
+---
+
+![containers](./docs/containers.png)
+---
+
+![attach-container-1](./docs/attach-container-1.png)
+---
+
+![attach-container-2](./docs/attach-container-2.png)
+---
+
+![open-folder](./docs/open-folder.png)
