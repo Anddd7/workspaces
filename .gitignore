@@ -1,6 +1,4 @@
 .DS_STORE
 
 workspaces/project*
-
 workspaces/github_*
-!workspaces/github_*/.devcontainer/
