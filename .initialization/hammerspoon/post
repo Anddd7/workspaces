@@ -1,0 +1,18 @@
+#!/bin/sh
+
+
+TARGET_FILE=~/.hammerspoon/init.lua
+BACKUP_FILE=./hammerspoon/init.lua.bak
+SOURCE_FILE=./hammerspoon/init.lua
+
+# backup
+
+if test -f "$TARGET_FILE"; then
+    cp $TARGET_FILE $BACKUP_FILE
+    echo "$TARGET_FILE exists, save it as bak file."
+fi
+
+# replace
+
+cp $SOURCE_FILE $BACKUP_FILE
+echo "$TARGET_FILE updated."

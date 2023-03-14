@@ -287,4 +287,28 @@
         "key": "cmd+0",
         "command": "-workbench.action.focusSideBar"
     },
+    {
+        "key": "cmd+d",
+        "command": "editor.action.duplicateSelection"
+    },
+    {
+        "key": "f4",
+        "command": "gitlens.openWorkingFile"
+    },
+    {
+        "key": "f7",
+        "command": "merge-conflict.next"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "go.test.cursor"
+    },
+    {
+        "key": "shift+cmd+t",
+        "command": "-workbench.action.reopenClosedEditor"
+    },
+    {
+        "key": "shift+cmd+t",
+        "command": "go.toggle.test.file"
+    },
 ]

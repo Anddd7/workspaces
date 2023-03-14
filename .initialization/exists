@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ ! -d "$2" ]; then
+    echo "⚠️  '$1' not exists, $3"
+else
+    echo "✅ '$1' installed"
+fi
