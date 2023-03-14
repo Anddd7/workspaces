@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if brew ls --versions --cask $1 > /dev/null; then
+    echo "✅ '$1' installed"
+else
+    brew install --cask $1 > /dev/null 2>&1 
+    echo "✳️  '$1' just installed"
+fi
