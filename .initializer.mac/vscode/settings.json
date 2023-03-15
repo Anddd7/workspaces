@@ -1,0 +1,36 @@
+{
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "Codegeex.Privacy": true,
+    "Codegeex.Survey": false,
+    "dart.onlyAnalyzeProjectsWithOpenFiles": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.accessibilitySupport": "off",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.fontFamily": "Jetbrains Mono, Consolas, 'Courier New', monospace",
+    "editor.formatOnSave": true,
+    "editor.inlineSuggest.enabled": true,
+    "eslint.format.enable": true,
+    "excalidraw.theme": "auto",
+    "files.autoSave": "afterDelay",
+    "git.openRepositoryInParentFolders": "always",
+    "redhat.telemetry.enabled": true,
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "terminal.integrated.fontFamily": "Jetbrains Mono, Consolas, 'Courier New', monospace",
+    "terminal.integrated.lineHeight": 1.3,
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Default Dark+ Experimental",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "none",
+    "yaml.format.singleQuote": true
+}

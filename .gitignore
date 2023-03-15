@@ -2,3 +2,5 @@
 
 workspaces/project*
 workspaces/github_*
+
+.vscode

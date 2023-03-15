@@ -22,12 +22,16 @@ _required:
 	@./brewc logseq
 	@./brewc wechat
 	@./brewc google-chrome
-required: _required colima
+required: _required colima fonts
 
 colima:
 	@./brew docker
 	@./brew docker-compose
 	@./brew colima
+
+fonts:
+	brew tap homebrew/cask-fonts
+	@./brewc font-jetbrains-mono
 
 _recommend:
 	@echo list of recommended tools
