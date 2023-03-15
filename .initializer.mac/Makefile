@@ -51,6 +51,8 @@ _optional:
 	@./brewc sourcetree
 optional: _optional
 
+all: required recommend optional
+
 # post configure
 
 hammerspoon-post:
