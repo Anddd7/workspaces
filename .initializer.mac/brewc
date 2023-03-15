@@ -1,8 +1,10 @@
 #!/bin/sh
 
-if brew ls --versions --cask $1 > /dev/null; then
-    echo "✅ '$1' installed"
-else
+version=`brew ls --versions --cask $1`
+
+if [ -z "$version" ]; then
     brew install --cask $1 > /dev/null 2>&1 
     echo "✳️  '$1' just installed"
+else
+    echo "✅ '$1' installed"
 fi
