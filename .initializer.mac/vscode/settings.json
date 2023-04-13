@@ -1,6 +1,12 @@
 {
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+    },
     "[markdown]": {
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "[python]": {
+        "editor.formatOnType": true
     },
     "[vue]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
@@ -20,6 +26,14 @@
     "excalidraw.theme": "auto",
     "files.autoSave": "afterDelay",
     "git.openRepositoryInParentFolders": "always",
+    "github.copilot.enable": {
+        "*": true,
+        "markdown": true,
+        "plaintext": true,
+        "yaml": false
+    },
+    "gitlens.views.commits.avatars": false,
+    "go.goroot": "/Users/adliao/.gvm/gos/go1.20",
     "redhat.telemetry.enabled": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.defaultProfile.linux": "zsh",

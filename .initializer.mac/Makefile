@@ -79,5 +79,6 @@ asdf-post:
 	asdf plugin add rust
 	asdf plugin add terraform
 	asdf plugin add terragrunt
+	asdf plugin add dotnet-core https://github.com/emersonsoares/asdf-dotnet-core.git
 
 .PHONY: hammerspoon vscode zsh brew exists binary

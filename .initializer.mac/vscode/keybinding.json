@@ -311,4 +311,22 @@
         "key": "shift+cmd+t",
         "command": "go.toggle.test.file"
     },
+    {
+        "key": "alt+cmd+v e",
+        "command": "-clipboard.editClipboard",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+cmd+v d",
+        "command": "-clipboard.removeFromClipboard",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+cmd+v",
+        "command": "go.godoctor.var"
+    },
+    {
+        "key": "alt+cmd+m",
+        "command": "go.godoctor.extract"
+    },
 ]
