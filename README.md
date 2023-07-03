@@ -13,7 +13,7 @@ How to keep your computer clear? How to quick setup the dev environments?
 > Intro: [“在我的电脑上明明可以的” — 图解 DevContainer 构建干净的开发环境](https://anddd7.mesh-shaped.top/#/migrate/devcontainer-tutorial)
 
 ## What should have in a developer workspace?
-testes
+
 ### Global tools
 
 installed in the specific OS via command line or installer, for common use scenarios.
