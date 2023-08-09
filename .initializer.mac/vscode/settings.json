@@ -2,11 +2,18 @@
     "[csharp]": {
         "editor.defaultFormatter": "ms-dotnettools.csharp"
     },
+    // common plugin configurations
+    // "gitlens.codeLens.authors.enabled": false,
+    // "gitlens.codeLens.recentChange.enabled": false,
+    // "gitlens.currentLine.enabled": false, // in modern version
     "[markdown]": {
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
     "[python]": {
         "editor.formatOnType": true
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
     },
     "[vue]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
@@ -15,7 +22,17 @@
     "Codegeex.Survey": false,
     "dart.onlyAnalyzeProjectsWithOpenFiles": true,
     "diffEditor.ignoreTrimWhitespace": false,
+    // common configurations
     "editor.accessibilitySupport": "off",
+    // "eslint.enable": true,
+    // "eslint.validate": [
+    //     "javascript",
+    //     "javascriptreact",
+    //     {
+    //         "language": "vue",
+    //         "autoFix": true
+    //     }
+    // ],
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
@@ -24,17 +41,35 @@
     "editor.inlineSuggest.enabled": true,
     "eslint.format.enable": true,
     "excalidraw.theme": "auto",
+    "explorer.confirmDelete": false,
+    "files.associations": {
+        "Buildfile": "yaml"
+    },
     "files.autoSave": "afterDelay",
     "git.openRepositoryInParentFolders": "always",
     "github.copilot.enable": {
         "*": true,
         "markdown": true,
         "plaintext": true,
-        "yaml": false
+        "scminput": false,
+        "yaml": true
     },
     "gitlens.views.commits.avatars": false,
+    "gitlens.views.commits.files.layout": "tree",
     "go.goroot": "/Users/adliao/.gvm/gos/go1.20",
-    "redhat.telemetry.enabled": true,
+    "go.testTimeout": "120s",
+    "pgsql.connections": [
+        {
+            "dbname": "postgres",
+            "emptyPasswordInput": false,
+            "host": "localhost",
+            "password": "pass",
+            "port": "5432",
+            "profileName": "di",
+            "user": "postgres"
+        }
+    ],
+    "redhat.telemetry.enabled": false,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.env.osx": {
@@ -42,9 +77,10 @@
     },
     "terminal.integrated.fontFamily": "Jetbrains Mono, Consolas, 'Courier New', monospace",
     "terminal.integrated.lineHeight": 1.3,
+    "window.commandCenter": false,
     "window.zoomLevel": 1,
-    "workbench.colorTheme": "Default Dark+ Experimental",
     "workbench.iconTheme": "vscode-icons",
+    "workbench.layoutControl.enabled": false,
     "workbench.startupEditor": "none",
     "yaml.format.singleQuote": true
 }

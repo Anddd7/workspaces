@@ -329,4 +329,36 @@
         "key": "alt+cmd+m",
         "command": "go.godoctor.extract"
     },
+    {
+        "key": "shift+cmd+u",
+        "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "shift+cmd+l",
+        "command": "editor.action.transformToLowercase"
+    },
+    {
+        "key": "f2",
+        "command": "editor.action.marker.next",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+f8",
+        "command": "-editor.action.marker.next",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+f6",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "f2",
+        "command": "-editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+f6",
+        "command": "-workbench.action.focusPreviousPart"
+    },
 ]
