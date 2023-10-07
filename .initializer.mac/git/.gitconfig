@@ -1,0 +1,26 @@
+# template for hirachy git config
+
+# global config
+[user]
+	name = Anddd7
+	email = liaoad_space@sina.com
+[commit]
+	template = /Users/adliao/.stCommitMsg
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
+	excludesfile = /Users/adliao/.gitignore_global
+
+# sub folder/project setting include
+[includeIf "gitdir:~/workspace-template/workspaces/project_abcd/"]
+	path = ~/workspace-template/workspaces/project_abcd/.gitconfig
+# replace the url if needed
+[url "ssh://git@bitbucket.abcd.com/"]
+	insteadOf = https://bitbucket.abcd.com/scm/
+# lfs support
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

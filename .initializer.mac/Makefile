@@ -39,7 +39,7 @@ _recommend:
 	@./brewc fig
 	@./brewc lens
 	@./brewc keycastr
-	@./brewc apifox
+	@./brewc utools
 	@./brew asdf
 recommend: _recommend
 
@@ -50,9 +50,11 @@ _optional:
 	@./brewc runcat-plugins-manager
 	@./brewc picgo
 	@./brewc bloomrpc
+	@./brewc insomia
+#	@./brewc apifox
 	@./brewc virtualbox
-	@./brewc obs
-	@./brewc sourcetree
+#	@./brewc obs 						# 视频推流
+#	@./brewc sourcetree
 optional: _optional
 
 all: required recommend optional
