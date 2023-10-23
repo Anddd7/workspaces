@@ -1,5 +1,5 @@
-# this is a template for git config in wsl
-# for most coding, you should use wsl to do it
+# this is a template for git config in windows host
+# used to fetch common resources from github
 
 [user]
 	name = Anddd7
@@ -15,7 +15,7 @@
 [https]
 	proxy = http://代理服务器地址:代理端口
 
-# special project config if needed
+# special project config if needed (not recommended, should put inside wsl)
 
 [includeIf "gitdir:~/workspace-template/workspaces/project_abcd/"]
 	path = ~/workspace-template/workspaces/project_abcd/.gitconfig

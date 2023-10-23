@@ -1,0 +1,14 @@
+# ide configuration
+.idea
+.vscode
+
+# version manager
+.fvm
+
+# crendentials
+*.pem
+*.key
+*.pub
+*.cer
+
+.jenkins/external
