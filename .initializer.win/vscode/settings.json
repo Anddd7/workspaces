@@ -1,0 +1,11 @@
+{
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false
+    },
+    "editor.fontFamily": "'JetBrains Mono', Dengxian, Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true
+    
+}

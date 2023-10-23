@@ -1,0 +1,16 @@
+[user]
+	name = Anddd7
+	email = liaoad_space@sina.com
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
+	excludesfile = C:/Users/adliao/.gitignore_global
+
+[http]
+	proxy = http://代理服务器地址:代理端口
+[https]
+	proxy = http://代理服务器地址:代理端口
+
+[includeIf "gitdir:~/workspace-template/workspaces/project_abcd/"]
+	path = ~/workspace-template/workspaces/project_abcd/.gitconfig
