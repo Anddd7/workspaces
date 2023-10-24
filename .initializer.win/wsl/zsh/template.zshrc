@@ -21,7 +21,7 @@ export ftp_proxy="http://proxy_server:proxy_port"
 export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
 
 # assemble kubeconfig
-export KUBECONFIG=`ls -1 ~/.kube/kubeconfig-* | paste -sd ":" -`
+export KUBECONFIG=`ls -1 ~/.kube/config_* | paste -sd ":" -`
 
 # assemble exec-path
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
