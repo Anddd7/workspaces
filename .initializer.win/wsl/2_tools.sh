@@ -1,4 +1,4 @@
-k#!/bin/bash
+#!/bin/bash
 
 # asdf 
 asdf plugin add awscli
@@ -15,3 +15,5 @@ asdf plugin add terragrunt
 asdf plugin add kubectl
 asdf plugin add dotnet-core https://github.com/emersonsoares/asdf-dotnet-core.git
 
+asdf install kubectl latest
+asdf install golang latest
