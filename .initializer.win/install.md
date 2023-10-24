@@ -3,19 +3,21 @@
 - Enable windows features
   - hyper-v
   - wsl
-- Install apps
+- Install required apps
   - Logseq
   - Visual Studio Code
   - Keepass
-  - FlowLauncher（alfred 替代）
-- Install wsl & virtualbox
+  - FlowLauncher
+  - Vargrunt
+  - VirtualBox
+- Install WSL (app store)
 - Config Windows
-  - ssh, git
+  - `./ssh`, `./git`
 - Config wsl
-  - ssh, git
-  - zsh, asdf ...
-- Config vscode
-  - shortcuts, settings, plugins
+  - config ssh git
+  - install tools in install.sh
+  - config zsh
+  - config tools in post.sh
 
 ## Shortcuts
 
