@@ -9,6 +9,9 @@ sudo apt -y install zsh
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# git lfs
+sudo apt intall -y git-lfs
+
 echo "-------------------------------"
 echo "please overwrite the git and ssh config, then reboot the wsl"
 echo "-------------------------------"
