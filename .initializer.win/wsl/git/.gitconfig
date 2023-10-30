@@ -15,6 +15,12 @@
 [https]
 	proxy = http://代理服务器地址:代理端口
 
+[filter "lfs"]
+clean = git-lfs clean -- %f
+process = git-lfs filter-process
+required = true
+smudge = git-lfs smudge -- %f
+
 # special project config if needed
 
 [includeIf "gitdir:~/workspace-template/workspaces/project_abcd/"]

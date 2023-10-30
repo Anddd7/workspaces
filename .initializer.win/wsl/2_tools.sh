@@ -1,19 +1,28 @@
 #!/bin/bash
 
-# asdf 
-asdf plugin add awscli
-asdf plugin add azure-cli
-asdf plugin add golang
-asdf plugin add java
-asdf plugin add kotlin
-asdf plugin add nodejs
-asdf plugin add python
-asdf plugin add ruby
-asdf plugin add rust
-asdf plugin add terraform
-asdf plugin add terragrunt
-asdf plugin add kubectl
-asdf plugin add dotnet-core https://github.com/emersonsoares/asdf-dotnet-core.git
+# cli, sdk and runtime
+plugins=(
+  golang nodejs  
+  terraform packer
+  kubectl helm kubeseal 
+  awscli aws-iam-authenticator eksctl
+  velero
+)
 
-asdf install kubectl latest
-asdf install golang latest
+for plugin in ${plugins[@]}; do
+  asdf plugin add $plugin
+  asdf install $plugin latest
+  asdf global $plugin latest
+done
+
+
+# prerequisite
+sudo apt install -y build-essential libssl-dev zlib1g-dev \
+  libbz2-dev libreadline-dev libsqlite3-dev curl \
+  libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+# special setting for python
+echo "ansible\n" > ~/.default-python-packages
+# installation
+asdf plugin add python
+asdf install python 3.12.0
+asdf global python 3.12.0
