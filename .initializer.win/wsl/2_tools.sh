@@ -15,7 +15,6 @@ for plugin in ${plugins[@]}; do
   asdf global $plugin latest
 done
 
-
 # prerequisite
 sudo apt install -y build-essential libssl-dev zlib1g-dev \
   libbz2-dev libreadline-dev libsqlite3-dev curl \

@@ -15,7 +15,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # git lfs
 sudo apt intall -y git-lfs
 # others ...
-sudo apt install -y direnv dnsutils tree unzip jq yq make
+sudo apt install -y direnv dnsutils tree unzip jq make
+sudo snap install yq
 
 echo "-------------------------------"
 echo "please overwrite the git and ssh config, then reboot the wsl"

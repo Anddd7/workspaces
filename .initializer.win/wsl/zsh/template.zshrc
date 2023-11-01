@@ -40,3 +40,5 @@ alias k=kubectl
 
 source <(kubectl completion zsh)
 complete -F __start_kubectl k
+
+eval "$(direnv hook zsh)"
