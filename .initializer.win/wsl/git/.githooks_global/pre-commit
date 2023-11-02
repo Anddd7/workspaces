@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Define your sensitive information patterns
+sensitive_patterns=(
+  "sensitive_info1"
+  "sensitive_info2"
+  "sensitive_info3"
+  "sensitive_info4"
+)
+
+# Loop through the files in the commit
+for file in $(git diff --cached --name-only)
+do
+  # Check each line of the file for sensitive patterns
+  for pattern in "${sensitive_patterns[@]}"
+  do
+    if git show ":$file" | grep -q "$pattern"
+    then
+      echo "Error: Sensitive information found in $file:"
+      git show ":$file" | grep -n "$pattern"
+      exit 1
+    fi
+  done
+done
+
+# If no sensitive information is found, continue with the commit
+exit 0

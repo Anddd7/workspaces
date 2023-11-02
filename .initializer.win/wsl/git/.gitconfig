@@ -8,7 +8,8 @@
 	defaultBranch = main
 [core]
 	autocrlf = input
-	excludesfile = C:/Users/adliao/.gitignore_global
+	excludesfile = ~/.gitignore_global
+	hooksPath = ~/.githooks_global
 
 [http]
 	proxy = http://代理服务器地址:代理端口
