@@ -25,3 +25,8 @@ echo "ansible\n" > ~/.default-python-packages
 asdf plugin add python
 asdf install python 3.12.0
 asdf global python 3.12.0
+
+# terraform cache
+mkdir -p ~/.terraform.d/plugin-cache
+chmod -R 755 ~/.terraform.d/plugin-cache
+echo 'plugin_cache_dir = "$HOME/.terraform.d/plugin-cache"' > ~/.terraformrc
