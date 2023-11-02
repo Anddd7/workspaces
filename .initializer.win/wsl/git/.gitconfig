@@ -10,6 +10,9 @@
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
 	hooksPath = ~/.githooks_global
+# enable credential store
+[credential]
+	helper = store
 
 [http]
 	proxy = http://代理服务器地址:代理端口
