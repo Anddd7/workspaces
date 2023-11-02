@@ -1,12 +1,28 @@
 #!/bin/bash
 
-# Define your sensitive information patterns
+## this hook is used to check if there is any sensitive information in the commit.
+## especially for the project which is open source.
+
 sensitive_patterns=(
   "sensitive_info1"
   "sensitive_info2"
   "sensitive_info3"
   "sensitive_info4"
 )
+
+exclude_paths=(
+  $(eval echo "~/your/private/project")
+)
+
+# Skip hooks for exclude paths
+current_path=$(pwd)
+
+for path in "${exclude_paths[@]}"; do
+  if [[ "$current_path" == $path* ]]; then
+    echo "✅ Skip: No check for internal projects."
+    exit 0
+  fi
+done
 
 # Loop through the files in the commit
 for file in $(git diff --cached --name-only)
@@ -16,12 +32,13 @@ do
   do
     if git show ":$file" | grep -q "$pattern"
     then
-      echo "Error: Sensitive information found in $file:"
+      echo "🚫 Error: Sensitive information found in $file:"
       git show ":$file" | grep -n "$pattern"
       exit 1
     fi
   done
 done
 
-# If no sensitive information is found, continue with the commit
+echo "✅ Pass: No sensitive information found."
+
 exit 0
