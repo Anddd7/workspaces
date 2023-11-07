@@ -1,11 +1,26 @@
 {
     "github.copilot.enable": {
         "*": true,
-        "plaintext": false,
+        "plaintext": true,
         "markdown": true,
         "scminput": false
     },
     "editor.fontFamily": "'JetBrains Mono', Dengxian, Consolas, 'Courier New', monospace",
-    "editor.fontLigatures": true
-    
+    "editor.accessibilitySupport": "off",
+    "editor.formatOnSave": true,
+    "editor.inlineSuggest.enabled": true,
+    "files.autoSave": "afterDelay",
+    "gitlens.views.commits.avatars": false,
+    "gitlens.views.commits.files.layout": "tree",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.layoutControl.enabled": false,
+    "workbench.startupEditor": "none",
+    "yaml.format.singleQuote": true,
+    "editor.fontLigatures": true,
+    "editor.tabSize": 2,
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "git.openRepositoryInParentFolders": "never",
+    "editor.wordWrap": "on"
 }

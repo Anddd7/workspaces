@@ -15,6 +15,9 @@ source $ZSH/oh-my-zsh.sh
 # |               env setting             |
 # -----------------------------------------
 
+# by default, use ~/bin to exec your self-made tools
+export PATH="$HOME/bin:$PATH"
+
 export http_proxy="http://proxy_server:proxy_port"
 export https_proxy="http://proxy_server:proxy_port"
 export ftp_proxy="http://proxy_server:proxy_port"
