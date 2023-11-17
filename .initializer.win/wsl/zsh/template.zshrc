@@ -6,11 +6,20 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="cloud"
 
-plugins=(git zsh-autosuggestions z asdf kube-ps1)
+plugins=(
+  # quick tool
+  z sudo
+  # prompt
+  zsh-autosuggestions kube-ps1
+  # alias / computation
+  git kubectl terraform aws azure asdf
+  # hooks
+  direnv
+)
 
 # setting for kube_ps1
 RPROMPT='$(kube_ps1)'
-export KUBE_PS1_SYMBOL_USE_IMG=true
+export KUBE_PS1_SYMBOL_DEFAULT="☸"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -37,14 +46,8 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # -----------------------------------------
 
 alias tg=terragrunt
-alias tf=terraform
-
 alias docker=podman
 alias docker-compose=podman-compose
 
-alias k=kubectl
-
-source <(kubectl completion zsh)
-complete -F __start_kubectl k
-
-eval "$(direnv hook zsh)"
+alias b64e="base64 -e"
+alias b64d="base64 -d"
