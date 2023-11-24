@@ -40,6 +40,7 @@ export KUBECONFIG=$(ls -1 ~/.kube/config_* | paste -sd ":" -)
 
 # assemble exec-path
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="/snap/bin:$PATH"
 
 # -----------------------------------------
 # |               alias setting           |
@@ -49,5 +50,13 @@ alias tg=terragrunt
 alias docker=podman
 alias docker-compose=podman-compose
 
-alias b64e="base64 -e"
-alias b64d="base64 -d"
+# -----------------------------------------
+# |               quick functions         |
+# -----------------------------------------
+
+b64d() {
+  echo "$1" | base64 -d
+}
+b64e() {
+  echo "$1" | base64 -e
+}
