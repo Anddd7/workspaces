@@ -2,6 +2,8 @@
     "[shellscript]": {
         "editor.defaultFormatter": "foxundermoon.shell-format"
     },
+    "dev.containers.dockerComposePath": "podman-compose",
+    "dev.containers.dockerPath": "podman",
     "editor.accessibilitySupport": "off",
     "editor.fontFamily": "'JetBrains Mono', Dengxian, Consolas, 'Courier New', monospace",
     "editor.fontLigatures": true,
@@ -9,6 +11,7 @@
     "editor.inlineSuggest.enabled": true,
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
+    "explorer.confirmDelete": false,
     "files.autoSave": "afterDelay",
     "git.openRepositoryInParentFolders": "never",
     "github.copilot.enable": {
@@ -20,9 +23,10 @@
     "gitlens.plusFeatures.enabled": false,
     "gitlens.views.commits.avatars": false,
     "gitlens.views.commits.files.layout": "tree",
+    "go.toolsManagement.autoUpdate": true,
     "window.zoomLevel": 1,
+    "workbench.iconTheme": "vscode-icons",
     "workbench.layoutControl.enabled": false,
-    "workbench.productIconTheme": "emoji-product-icons-fun",
     "workbench.startupEditor": "none",
     "yaml.format.singleQuote": true
 }
