@@ -2,29 +2,22 @@
 # used to fetch common resources from github
 
 [user]
-	name = Anddd7
-	email = liaoad_space@sina.com
+name = Anddd7
+email = liaoad_space@sina.com
 [init]
-	defaultBranch = main
+defaultBranch = main
 [core]
-	autocrlf = input
-	excludesfile = C:/Users/adliao/.gitignore_global
-# enable credential store
+autocrlf = input
 [credential]
-	helper = store
+helper = store
 
 [http]
-	proxy = http://代理服务器地址:代理端口
+proxy = http://代理服务器地址:代理端口
 [https]
-	proxy = http://代理服务器地址:代理端口
+proxy = http://代理服务器地址:代理端口
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	process = git-lfs filter-process
-	required = true
-	smudge = git-lfs smudge -- %f
-
-# special project config if needed (not recommended, should put inside wsl)
-
-[includeIf "gitdir:~/workspace-template/workspaces/project_abcd/"]
-	path = ~/workspace-template/workspaces/project_abcd/.gitconfig
+clean = git-lfs clean -- %f
+process = git-lfs filter-process
+required = true
+smudge = git-lfs smudge -- %f

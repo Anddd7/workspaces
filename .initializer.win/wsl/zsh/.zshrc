@@ -29,34 +29,17 @@ source $ZSH/oh-my-zsh.sh
 
 # by default, use ~/bin to exec your self-made tools
 export PATH="$HOME/bin:$PATH"
-
-export http_proxy="http://proxy_server:proxy_port"
-export https_proxy="http://proxy_server:proxy_port"
-export ftp_proxy="http://proxy_server:proxy_port"
-export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
-
-# assemble kubeconfig
-export KUBECONFIG=$(ls -1 ~/.kube/config_* | paste -sd ":" -)
-
 # assemble exec-path
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="/snap/bin:$PATH"
 
-# -----------------------------------------
-# |               alias setting           |
-# -----------------------------------------
-
-alias tg=terragrunt
-alias docker=podman
-alias docker-compose=podman-compose
+# assemble kubeconfig
+export KUBECONFIG=$(ls -1 ~/.kube/config_* | paste -sd ":" -)
 
 # -----------------------------------------
-# |               quick functions         |
+# |            external source            |
 # -----------------------------------------
 
-b64d() {
-  echo "$1" | base64 -d
-}
-b64e() {
-  echo "$1" | base64 -e
-}
+source $HOME/alias.zshrc
+source $HOME/credentials.zshrc
+source <(adcli completion zsh)
