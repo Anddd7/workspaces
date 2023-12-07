@@ -1,7 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # -----------------------------------------
-# |               zsh setting             |
+#                 zsh plugins
 # -----------------------------------------
 
 ZSH_THEME="cloud"
@@ -24,7 +24,7 @@ export KUBE_PS1_SYMBOL_DEFAULT="☸"
 source $ZSH/oh-my-zsh.sh
 
 # -----------------------------------------
-# |               env setting             |
+#                 env loading
 # -----------------------------------------
 
 # by default, use ~/bin to exec your self-made tools
@@ -36,10 +36,12 @@ export PATH="/snap/bin:$PATH"
 # assemble kubeconfig
 export KUBECONFIG=$(ls -1 ~/.kube/config_* | paste -sd ":" -)
 
-# -----------------------------------------
-# |            external source            |
-# -----------------------------------------
+fetch_customized_scripts() {
+  wget -q https://raw.githubusercontent.com/Anddd7/workspaces/main/.initializer.win/wsl/zsh/customized.zshrc -O ~/customized.zshrc
+}
 
-source $HOME/alias.zshrc
-source $HOME/credentials.zshrc
-source <(adcli completion zsh)
+source ~/customized.zshrc
+
+# split and load the rest of the scripts
+# source ~/snowflake.zshrc
+# source ~/credentials.zshrc

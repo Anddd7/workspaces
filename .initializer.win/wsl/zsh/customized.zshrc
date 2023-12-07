@@ -1,16 +1,11 @@
-# manage the alias and shorthand functions
-
 alias tg=terragrunt
 alias docker=podman
 alias docker-compose=podman-compose
 
-b64() {
-  echo -n "$1" | base64 -w 0
-}
-b64d() {
-  echo -n "$1" | base64 -d
-}
-# 加密Secret YAML文件的data部分
+b64() { echo -n "$1" | base64 -w 0; }
+b64d() { echo -n "$1" | base64 -d; }
+
+# encrypt k8s secret yaml
 b64k8s() {
   local input_file="$1"
   local output_file="$2"
@@ -30,7 +25,8 @@ b64k8s() {
 
   echo "Secret encrypted and saved to: $output_file"
 }
-# 解密Secret YAML文件的data部分
+
+# decrypt k8s secret yaml
 b64dk8s() {
   local input_file="$1"
   local output_file="$2"
@@ -45,23 +41,51 @@ b64dk8s() {
     return 1
   fi
 
-  # 提取data部分，进行Base64解密
   cat "$input_file" | yq eval -P '.data |= with_entries(.value |= @base64d)' - >"$output_file"
 
   echo "Secret decrypted and saved to: $output_file"
 }
-# temp notebook
-tmpnb() {
-  # 获取当前时间，并格式化为 YYYY-MM-DD_HH-MM-SS
-  current_time=$(date +"%Y%m%d_%H%M%S")
 
-  # 创建以当前时间为名的文件夹
+# create a temp folder and change into it
+tmpnb() {
+  current_time=$(date +"%Y%m%d_%H%M%S")
   folder_name=".tmpnb_$current_time"
+
   mkdir "$folder_name"
 
-  # 进入新创建的文件夹
   cd "$folder_name"
 
-  # 输出提示信息
   echo "Created temp notebook: $folder_name and changed into it."
+}
+
+# clear the color code from zsh output
+clzsh() {
+  local input_file="$1"
+  local output_file="$2"
+
+  # sed 's/[1m//g' <"$input_file" >"$output_file"
+
+  grep -v -E '\[1m' "$input_file" >"$output_file"
+}
+
+# select branch to delete
+gbd() {
+  local branches branch
+
+  # 使用 fzf 从当前 Git 仓库中选择分支
+  branches=$(git branch --format="%(refname:short)" | fzf --multi)
+
+  # 如果没有选择任何分支，则退出
+  [[ -z "$branches" ]] && return
+
+  # 循环删除选定的分支
+  for branch in $branches; do
+    # 删除本地分支
+    git branch -D "$branch" 2>/dev/null
+
+    # 删除远程分支
+    git push origin --delete "$branch" 2>/dev/null
+  done
+
+  echo "Branch(es) deleted: $branches"
 }
