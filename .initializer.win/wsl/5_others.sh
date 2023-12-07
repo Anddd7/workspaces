@@ -11,3 +11,6 @@ npm install -g @devcontainers/cli
 git clone https://github.com/bigH/git-fuzzy.git ~/bin/git-fuzzy
 # add the executable to your path
 echo "export PATH=\"\$HOME/git-fuzzy/bin:\$PATH\"" >>~/.zshrc
+
+# git-fzf
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Anddd7/git-fzf/main/install.sh)"
