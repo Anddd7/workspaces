@@ -36,12 +36,8 @@ export PATH="/snap/bin:$PATH"
 # assemble kubeconfig
 export KUBECONFIG=$(ls -1 ~/.kube/config_* | paste -sd ":" -)
 
-fetch_customized_scripts() {
-  wget -q https://raw.githubusercontent.com/Anddd7/workspaces/main/.initializer.win/wsl/zsh/customized.zshrc -O ~/customized.zshrc
-}
-
-fetch_customized_scripts
-source ~/customized.zshrc
+source <(curl -sSL "https://raw.githubusercontent.com/Anddd7/workspaces/main/.initializer.win/wsl/zsh/customized.zshrc")
+source <(curl -sSL "https://raw.githubusercontent.com/Anddd7/git-fzf/main/commit-msg.sh")
 
 # split and load the rest of the scripts
 # source ~/snowflake.zshrc
