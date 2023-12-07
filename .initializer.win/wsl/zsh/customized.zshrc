@@ -59,27 +59,23 @@ tmpnb() {
 }
 
 # clear the color code from zsh output
-clzsh() {
-  local input_file="$1"
-  local output_file="$2"
-
-  # sed 's/[1m//g' <"$input_file" >"$output_file"
-
-  grep -v -E '\[1m' "$input_file" >"$output_file"
+nocolor() {
+  sed -i 's/\[[0-9;]*m//g' "$1"
 }
 
 # select branch to delete
-gbd() {
+gbds() {
   local branches branch
 
-  # 使用 fzf 从当前 Git 仓库中选择分支
-  branches=$(git branch --format="%(refname:short)" | fzf --multi)
+  # 使用 fzf 从当前 Git 仓库中选择分支，不包含 master 和 main
+  branches=$(git branch --format="%(refname:short)" | grep -v -E 'master|main' | fzf --multi)
 
   # 如果没有选择任何分支，则退出
   [[ -z "$branches" ]] && return
 
   # 循环删除选定的分支
   for branch in $branches; do
+
     # 删除本地分支
     git branch -D "$branch" 2>/dev/null
 

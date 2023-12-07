@@ -40,6 +40,7 @@ fetch_customized_scripts() {
   wget -q https://raw.githubusercontent.com/Anddd7/workspaces/main/.initializer.win/wsl/zsh/customized.zshrc -O ~/customized.zshrc
 }
 
+fetch_customized_scripts
 source ~/customized.zshrc
 
 # split and load the rest of the scripts
