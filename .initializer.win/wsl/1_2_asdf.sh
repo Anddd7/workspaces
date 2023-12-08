@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+
 # cli, sdk and runtime
 plugins=(
   golang nodejs
@@ -15,21 +18,18 @@ for plugin in ${plugins[@]}; do
   asdf global $plugin latest
 done
 
-# prerequisite
+# python installation
+# prerequsite
 sudo apt install -y build-essential libssl-dev zlib1g-dev \
   libbz2-dev libreadline-dev libsqlite3-dev curl \
   libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-# special setting for python
-echo "ansible\n" >~/.default-python-packages
 # installation
 asdf plugin add python
 asdf install python 3.12.0
 asdf global python 3.12.0
+asdf reshim python
+# ansible setting
+echo "ansible\n" >~/.default-python-packages
 
-# terraform cache
-mkdir -p ~/.terraform.d/plugin-cache
-chmod -R 755 ~/.terraform.d/plugin-cache
-echo 'plugin_cache_dir = "$HOME/.terraform.d/plugin-cache"' >~/.terraformrc
-
-# node fix
+# nodejs post update
 asdf nodejs update nodebuild
