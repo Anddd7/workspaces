@@ -6,10 +6,10 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 # cli, sdk and runtime
 plugins=(
   golang nodejs
-  terraform packer
-  kubectl helm kubeseal
-  awscli aws-iam-authenticator eksctl
-  velero argocd
+  # terraform packer
+  # kubectl helm kubeseal
+  # awscli aws-iam-authenticator eksctl
+  # velero argocd
 )
 
 for plugin in ${plugins[@]}; do

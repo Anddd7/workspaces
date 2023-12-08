@@ -11,6 +11,3 @@ echo 'plugin_cache_dir = "$HOME/.terraform.d/plugin-cache"' >~/.terraformrc
 # git-fuzzy
 git clone https://github.com/bigH/git-fuzzy.git ~/bin/git-fuzzy
 echo "export PATH=\"\$HOME/git-fuzzy/bin:\$PATH\"" >>~/.zshrc
-
-# git-fzf
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Anddd7/git-fzf/main/install.sh)"
