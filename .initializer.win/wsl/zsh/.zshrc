@@ -32,4 +32,4 @@ export PATH="$HOME/bin:$PATH"
 # assemble exec-path
 export PATH="/snap/bin:$PATH"
 
-source <(curl -sSL "https://raw.githubusercontent.com/Anddd7/adcli/main/scripts/alias.sh")
+source <(curl -sSL "https://raw.githubusercontent.com/Anddd7/workspaces/main/scripts/alias")
