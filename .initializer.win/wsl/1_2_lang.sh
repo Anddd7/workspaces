@@ -9,7 +9,7 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 plugins=(
   golang
   # terraform packer
-  # kubectl helm kubeseal
+  kubectl helm kubeseal
   # awscli aws-iam-authenticator eksctl
   # velero argocd
 )
@@ -22,19 +22,20 @@ done
 
 # Python
 # ----------------------------
-# pre-requirements
-sudo apt install -y build-essential libssl-dev zlib1g-dev \
-  libbz2-dev libreadline-dev libsqlite3-dev curl \
-  libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+# sudo apt install -y build-essential libssl-dev zlib1g-dev \
+#   libbz2-dev libreadline-dev libsqlite3-dev curl \
+#   libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
-asdf plugin add python
-asdf install python 3.12.1
-asdf global python 3.12.1
-asdf reshim python
+# asdf plugin add python
+# asdf install python 3.12.1
+# asdf global python 3.12.1
+# asdf reshim python
 
-# poetry
+# pipx to enable virtualenv and apps
+# ----------------------------
 sudo apt install pipx
 pipx install poetry
+pipx install ansible-core
 
 
 # nodejs
