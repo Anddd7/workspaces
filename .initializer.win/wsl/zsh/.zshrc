@@ -29,7 +29,5 @@ source $ZSH/oh-my-zsh.sh
 
 # by default, use ~/bin to exec your self-made tools
 export PATH="$HOME/bin:$PATH"
-# assemble exec-path
-export PATH="/snap/bin:$PATH"
 
 source <(curl -sSL "https://raw.githubusercontent.com/Anddd7/workspaces/main/scripts/alias")

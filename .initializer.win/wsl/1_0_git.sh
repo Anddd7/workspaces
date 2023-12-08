@@ -1,5 +1,9 @@
 #!/bin/bash
 
-cp ./git/.gitconfig ~/
-cp ./git/.gitignore_global ~/
-cp ./git/.githooks_global ~/
+# --------------------------------------
+# Here are some git configurations. (extracted, you can copy the snippet to your home)
+# --------------------------------------
+
+# cp ./git/.gitconfig ~/
+# cp ./git/.gitignore_global ~/
+# cp ./git/.githooks_global ~/

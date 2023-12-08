@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# --------------------------------------
+# Container environment, if you don't use docker
+# --------------------------------------
+
 # podman
 sudo apt -y install podman
 pip3 install podman-compose

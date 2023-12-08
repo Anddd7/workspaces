@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# --------------------------------------
+# Other optional tools, settings
+# --------------------------------------
+
+
 # terraform cache
 mkdir -p ~/.terraform.d/plugin-cache
 chmod -R 755 ~/.terraform.d/plugin-cache
