@@ -2,6 +2,11 @@
 
 # --------------------------------------
 # Install the language, cli, sdk and runtime
+# - asdf is used to manage tools that need to lock to a specific version, or multiple versions
+# - pipx is a new tool to manage python virtualenv and apps, so we can totally separate the python version from the system
+#
+# Isolation & Effort
+# devcontainer > virtualenv > asdf > version manager > locally installed
 # --------------------------------------
 
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
@@ -36,7 +41,6 @@ done
 sudo apt install pipx
 pipx install poetry
 pipx install ansible-core
-
 
 # nodejs
 # ----------------------------
