@@ -1,22 +1,15 @@
 #!/bin/bash
 
 # --------------------------------------
-# Install the language, cli, sdk and runtime
-# - asdf is used to manage tools that need to lock to a specific version, or multiple versions
-# - pipx is a new tool to manage python virtualenv and apps, so we can totally separate the python version from the system
-#
-# Isolation & Effort
-# devcontainer > virtualenv > asdf > version manager > locally installed
+# Install the language environment
 # --------------------------------------
-
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 
 plugins=(
   golang
-  # terraform packer
-  kubectl helm kubeseal
-  # awscli aws-iam-authenticator eksctl
-  # velero argocd
+  # python tools
+  pipx pdm poetry
+  # 
+  yarn
 )
 
 for plugin in ${plugins[@]}; do
@@ -25,22 +18,21 @@ for plugin in ${plugins[@]}; do
   asdf global $plugin latest
 done
 
-# Python
+# Python special installation
 # ----------------------------
-# sudo apt install -y build-essential libssl-dev zlib1g-dev \
-#   libbz2-dev libreadline-dev libsqlite3-dev curl \
-#   libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+sudo apt install -y build-essential libssl-dev zlib1g-dev \
+  libbz2-dev libreadline-dev libsqlite3-dev curl \
+  libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
-# asdf plugin add python
-# asdf install python 3.12.1
-# asdf global python 3.12.1
-# asdf reshim python
+# replace source with mirror if needed
+# ~/.asdf/plugins/python/pyenv/plugins/python-build/share/python-build/3.12.0
+# - https://www.python.org/ftp -> https://mirrors.huaweicloud.com
 
-# pipx to enable virtualenv and apps
-# ----------------------------
-sudo apt install pipx
-pipx install poetry
-pipx install ansible-core
+# python3 + pip
+asdf plugin add python
+asdf install python 3.12.1
+asdf global python 3.12.1
+asdf reshim python
 
 # nodejs
 # ----------------------------

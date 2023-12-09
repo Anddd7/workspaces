@@ -6,8 +6,7 @@
 
 # podman
 sudo apt -y install podman
-pip3 install podman-compose
-asdf reshim python
+python -m pip install podman-compose && asdf reshim python
 
 # k3s
 curl -sfL https://get.k3s.io | sh -
