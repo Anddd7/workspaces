@@ -58,6 +58,19 @@ tmpnb() {
   echo "Created temp notebook: $folder_name and changed into it."
 }
 
+tmpf() {
+  file_name=$(mktemp tmpf.XXXXXX)
+  format=$1
+
+  if [ -n "$format" ]; then
+    file_name="$file_name.$format"
+  fi
+
+  cat - >"$file_name"
+
+  echo "Output written to $file_name"
+}
+
 # clear the color code from zsh output
 nocolor() {
   sed -i 's/\[[0-9;]*m//g' "$1"
