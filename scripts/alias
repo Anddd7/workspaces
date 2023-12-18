@@ -59,13 +59,14 @@ tmpnb() {
 }
 
 tmpf() {
-  file_name=$(mktemp tmpf.XXXXXX)
+  file_name=tmpf.XXXXXX
   format=$1
 
   if [ -n "$format" ]; then
     file_name="$file_name.$format"
   fi
 
+  file_name=$(mktemp $file_name)
   cat - >"$file_name"
 
   echo "Output written to $file_name"
