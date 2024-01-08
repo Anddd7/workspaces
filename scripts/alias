@@ -59,7 +59,8 @@ tmpnb() {
 }
 
 tmpf() {
-  file_name=tmpf.XXXXXX
+  current_time=$(date +"%H%M%S")
+  file_name="tmpf_$current_time"
   format=$1
 
   if [ -n "$format" ]; then
