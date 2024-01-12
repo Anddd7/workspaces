@@ -30,4 +30,18 @@ source $ZSH/oh-my-zsh.sh
 # by default, use ~/bin to exec your self-made tools
 export PATH="$HOME/bin:$PATH"
 
-source <(curl -sSL "https://raw.githubusercontent.com/Anddd7/workspaces/main/scripts/alias")
+# pipx
+export PATH="$HOME/.local/bin:$PATH"
+
+# krew
+# export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+# kubeconfig
+# export KUBECONFIG=$(ls -1 ~/.kube/config_* | paste -sd ":" -)
+
+# snap
+# export PATH="/snap/bin:$PATH"
+
+# then
+# - source scripts
+# - export credentials
+# - ...
