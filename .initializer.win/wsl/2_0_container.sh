@@ -4,9 +4,10 @@
 # Container environment, if you don't use docker
 # --------------------------------------
 
-# podman
-sudo apt -y install podman
-python -m pip install podman-compose && asdf reshim python
+# TODO ...!!install containerd instead of podman
+# .
+# .
+# .
 
 # k3s
 curl -sfL https://get.k3s.io | sh -

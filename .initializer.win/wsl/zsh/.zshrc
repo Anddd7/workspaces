@@ -8,11 +8,13 @@ ZSH_THEME="cloud"
 
 plugins=(
   # quick tool
-  z sudo
+  z sudo qrcode gitignore asdf
   # prompt
-  zsh-autosuggestions kube-ps1
+  kube-ps1 zsh-autosuggestions zsh-completions
+  # prompt (zsh-users)
+  zsh-interactive-cd zsh-navigation-tools
   # alias / computation
-  git kubectl terraform aws azure asdf
+  git kubectl terraform aws azure
   # hooks
   direnv
 )
@@ -40,6 +42,12 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # snap
 # export PATH="/snap/bin:$PATH"
+
+# shell toolchains
+# source "https://github.com/Anddd7/rubber-duck/tree/main/b64/kw/main.sh"
+# source "https://github.com/Anddd7/rubber-duck/tree/main/b64/b64/main.sh"
+# source "https://github.com/Anddd7/rubber-duck/tree/main/b64/zsh/main.sh"
+# source "https://github.com/Anddd7/rubber-duck/tree/main/b64/tmpnb/main.sh"
 
 # then
 # - source scripts
