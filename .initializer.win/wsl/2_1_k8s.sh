@@ -31,15 +31,49 @@ echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >>~/.zshrc
 # k8s tools
 kubectl krew install ctx
 kubectl krew install ns
-kubectl krew install grep
+kubectl krew install hns
 
-sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
-sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
-sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+# list
+kubectl krew install grep        # list resources by keywords and namespace
+kubectl krew install custom-cols # customize output with templates
+kubectl krew install fuzzy       # fuzzy search
 
-mkdir -p ~/.oh-my-zsh/custom/completions
-chmod -R 755 ~/.oh-my-zsh/custom/completions
-ln -s /opt/kubectx/completion/_kubectx.zsh ~/.oh-my-zsh/custom/completions/_kubectx.zsh
-ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/custom/completions/_kubens.zsh
+kubectl krew install access-matrix # rbac
+kubectl krew install ctr           # container
+kubectl krew install history       # rollout history
+kubectl krew install tree
 
-echo "fpath=($ZSH/custom/completions $fpath)" >>~/.zshrc
+# get
+kubectl krew install view-cert
+kubectl krew install view-secret
+kubectl krew install viewnode # overview of node+pod+container
+
+# watch
+kubectl krew install kclock
+
+# describe
+kubectl krew install pod-inspect
+kubectl krew install status
+
+# logs
+kubectl krew install plogs # filter
+kubectl krew install kail  # tail/stream logs
+# kubectl krew install capture
+
+# top
+kubectl krew install ktop
+kubectl krew install resource-capacity # capacity overview
+kubectl krew install view-allocations
+
+# apply
+kubectl krew install confirm # confirm-then-apply
+kubectl krew install dup     # quick duplication
+
+# helper/debug
+kubectl krew install explore   # api-resources document
+kubectl krew install podevents # capture events
+kubectl krew install oomd      # capture oom pods
+kubectl krew install unlimited # capture unlimited resources
+kubectl krew install outdated  # check outdated images
+kubectl krew install sick-pods # check unhealthy pods
+# kubectl krew install kopilot

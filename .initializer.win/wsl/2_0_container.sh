@@ -4,13 +4,9 @@
 # Container environment, if you don't use docker
 # --------------------------------------
 
-# TODO ...!!install containerd instead of podman
-# .
-# .
-# .
-
-# k3s
-curl -sfL https://get.k3s.io | sh -
+# use `Rancher Desktop` to manage container&kubernetes automatically
+# it packages docker, nerdctl, k3s
+# just verify whether it's available in wsl as well
 
 # export kubeconfig
 export KUBECONFIG=~/.kube/config_k3s

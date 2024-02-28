@@ -1,13 +1,14 @@
 # Windows Setup
 
-## Windows installation
+## Windows: Windows Features
 
-### Enable windows features
+> Optional Features -> More Windows Features
 
-- hyper-v
-- wsl
+- Hyper-v
+- Virtual Machine Platform
+- Windows Subsystem for Linux
 
-### Install required apps
+## Windows: Install apps
 
 - Logseq
 - Visual Studio Code
@@ -15,39 +16,43 @@
 - Vargrunt
 - VirtualBox
 - uTools
-- WSL
+- Windows Terminal
+- WSL2
+  - wsl_update_x64.msi
+  - [wsl-vpnkit.tar.gz](https://github.com/sakai135/wsl-vpnkit?tab=readme-ov-file#install)
+- Font: JetBrainsMono
 
-### Config git
+### Other Apps
 
-#### .gitconfig
+- Rancher Desktop
+- Hoppscotch
+- Browser Extension - login account to sync
+  - GoFullPage
+  - Authenticator
+  - ChatGPT
+  - Immersive Translate 即时翻译
+  - MarkDownload
+  - SwitchyOmega
+  - ModHeader
+  - Screen Shader
+  - Automa 网页自动化
 
-```toml
-[user]
-name = Anddd7
-email = liaoad_space@sina.com
-[init]
-defaultBranch = main
-[core]
-autocrlf = input
-[credential]
-helper = store
+### Other Settings
 
-[filter "lfs"]
-clean = git-lfs clean -- %f
-process = git-lfs filter-process
-required = true
-smudge = git-lfs smudge -- %f
-```
+- 键盘灵敏度
+- 时钟 -> 世界时钟
 
-#### ssh
+## WSL: Prerequisites
 
-generate key
+### Git: ssh
+
+- generate ssh key
 
 ```powershell
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
-configure ssh identifier (if needed, in proxy environment)
+- configure ssh identifier `~/.ssh/config`
 
 ```toml
 Host github.com
@@ -57,17 +62,7 @@ Host github.com
   Port 443
 ```
 
-## WSL installation
+## WSL: Installation
 
-### Git & SSH
-
-```sh
-cp -r /mnt/c/Users/your-user-name/.ssh ~/.ssh
-chmod 600 ~/.ssh/id_ed25519
-```
-
-git clone this repo to `~/workspaces`
-
-### Installation
-
-follow the installation sh
+- `git clone git@github.com:Anddd7/workspaces.git ~/workspaces_root`
+- follow the *.sh to install everything you need

@@ -25,4 +25,3 @@ done
 mkdir -p ~/.terraform.d/plugin-cache
 chmod -R 755 ~/.terraform.d/plugin-cache
 echo 'plugin_cache_dir = "$HOME/.terraform.d/plugin-cache"' >~/.terraformrc
-

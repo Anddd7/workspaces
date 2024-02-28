@@ -7,12 +7,17 @@
 # enable systemd for wsl2
 echo -e "[boot]\nsystemd=true" | sudo tee /etc/wsl.conf
 
-sudo apt-get update
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# **install tools via homebrew**
+
 # install common packages
-sudo apt install -y git-lfs direnv dnsutils tree unzip jq make fzf graphviz cloc 
+brew install git-lfs direnv dnsutils tree unzip jq make fzf graphviz cloc
+
 # ntp, keep time in sync
-sudo apt install -y ntp
+brew install ntp
 sudo service ntp start
 
-# asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+# asdf, version manager
+brew install asdf

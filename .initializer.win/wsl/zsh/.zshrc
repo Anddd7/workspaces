@@ -29,6 +29,8 @@ source $ZSH/oh-my-zsh.sh
 #                 env loading
 # -----------------------------------------
 
+export TZ='Asia/Shanghai'
+
 # by default, use ~/bin to exec your self-made tools
 export PATH="$HOME/bin:$PATH"
 

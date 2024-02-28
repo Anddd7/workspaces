@@ -7,8 +7,8 @@
 plugins=(
   golang
   # python tools
-  pipx pdm poetry
-  # 
+  pipx poetry
+  # others
   yarn
 )
 
@@ -18,23 +18,24 @@ for plugin in ${plugins[@]}; do
   asdf global $plugin latest
 done
 
-# Python special installation
+# Python: special installation
 # ----------------------------
+# 0. replace source with mirror if needed
+# ~/.asdf/plugins/python/pyenv/plugins/python-build/share/python-build/3.12.0
+# - https://www.python.org/ftp -> https://mirrors.huaweicloud.com
+
+# 1. dependencies
 sudo apt install -y build-essential libssl-dev zlib1g-dev \
   libbz2-dev libreadline-dev libsqlite3-dev curl \
   libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
-# replace source with mirror if needed
-# ~/.asdf/plugins/python/pyenv/plugins/python-build/share/python-build/3.12.0
-# - https://www.python.org/ftp -> https://mirrors.huaweicloud.com
-
-# python3 + pip
+# 2. install
 asdf plugin add python
 asdf install python 3.12.1
 asdf global python 3.12.1
 asdf reshim python
 
-# nodejs
+# Nodejs: special installation
 # ----------------------------
 asdf plugin add nodejs
 asdf install nodejs latest
