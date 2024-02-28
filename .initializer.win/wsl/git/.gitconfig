@@ -13,6 +13,11 @@ hooksPath = ~/.githooks_global
 [credential]
 helper = store
 
+# [http]
+# proxy = http://proxy:port
+# [https]
+# proxy = http://proxy:port
+
 [filter "lfs"]
 clean = git-lfs clean -- %f
 process = git-lfs filter-process
