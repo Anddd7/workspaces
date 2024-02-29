@@ -1,10 +1,1 @@
-.DS_STORE
-.vscode
-
-# ignore all under github projects
-workspaces/github_*/*/
-# but still include the devcontainer config
-!workspaces/github_*/.devcontainer/
-
-# ignore all under biz projects
-workspaces/project*
+workspaces/**
