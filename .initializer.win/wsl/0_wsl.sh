@@ -13,11 +13,6 @@ echo -e "[boot]\nsystemd=true" | sudo tee /etc/wsl.conf
 # **install tools via homebrew**
 
 # install common packages
-brew install git-lfs direnv dnsutils tree unzip jq make fzf graphviz cloc
+sudo apt install dnsutils
 
-# ntp, keep time in sync
-brew install ntp
-sudo service ntp start
-
-# asdf, version manager
-brew install asdf
+brew install git-lfs direnv tree unzip jq make fzf graphviz cloc ntp asdf

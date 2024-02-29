@@ -4,15 +4,12 @@
 # Container environment, if you don't use docker
 # --------------------------------------
 
-# use `Rancher Desktop` to manage container&kubernetes automatically
-# it packages docker, nerdctl, k3s
-# just verify whether it's available in wsl as well
+# 1. Install 'Rancher-Desktop' to host k3s in an independent wsl instance
+# 2. Enable wsl integratopm to expose the docker socket and kube config to your wsl
+# 3. Install docker cli, kubectl to access the environment which created by rancher desktop
 
-# export kubeconfig
-export KUBECONFIG=~/.kube/config_k3s
-mkdir ~/.kube 2>/dev/null
-sudo k3s kubectl config view --raw >"$KUBECONFIG"
-chmod 600 "$KUBECONFIG"
+# docker
+brew install docker
 
 # assemble kubeconfig
 echo 'export KUBECONFIG=$(ls -1 ~/.kube/config_* | paste -sd ":" -)' >>~/.zshrc
