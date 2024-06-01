@@ -15,4 +15,4 @@ echo -e "[boot]\nsystemd=true" | sudo tee /etc/wsl.conf
 # install common packages
 sudo apt install dnsutils
 
-brew install git-lfs direnv tree unzip jq make fzf graphviz cloc ntp asdf
+brew install git-lfs direnv tree unzip yq jq make fzf graphviz cloc ntp asdf git-chglog

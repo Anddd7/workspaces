@@ -10,9 +10,7 @@ plugins=(
   # aws
   awscli aws-iam-authenticator eksctl
   # cloud-native
-  velero argocd
-  # others
-  yq
+  velero argocd rancher
 )
 
 for plugin in ${plugins[@]}; do
@@ -25,3 +23,10 @@ done
 mkdir -p ~/.terraform.d/plugin-cache
 chmod -R 755 ~/.terraform.d/plugin-cache
 echo 'plugin_cache_dir = "$HOME/.terraform.d/plugin-cache"' >~/.terraformrc
+
+# git-cz
+npm install -g git-cz
+asdf reshim nodejs
+
+# pre-commit
+pip install pre-commit
