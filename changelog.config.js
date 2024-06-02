@@ -1,30 +1,32 @@
 module.exports = {
     disableEmoji: false,
-    format: '{type}{scope}: {emoji}{subject}',
-    list: ['test', 'feat', 'fix', 'chore', 'docs', 'refactor', 'style', 'ci', 'perf'],
+    // format: '{type}{scope}: {emoji}{subject}',
+    format: '{emoji}{type}{scope}: {subject}',
+    list: ['feat', 'fix', 'docs', 'test', 'refactor', 'style', 'ci', 'perf', 'misc'],
     maxMessageLength: 64,
     minMessageLength: 3,
-    questions: ['type', 'scope', 'subject', 'body', 'breaking', 'issues', 'lerna'],
-    scopes: ["init_scripts", "workspaces", ""],
+    // questions: ['type', 'scope', 'subject', 'body', 'breaking', 'issues', 'lerna'],
+    questions: ['type', 'scope', 'subject', 'issues'],
+    scopes: [],
     types: {
-        chore: {
+        misc: {
             description: 'Build process or auxiliary tool changes',
-            emoji: '🤖',
-            value: 'chore'
+            emoji: '🍺',
+            value: 'misc'
         },
         ci: {
             description: 'CI related changes',
-            emoji: '🎡',
+            emoji: '🤖',
             value: 'ci'
         },
         docs: {
             description: 'Documentation only changes',
-            emoji: '✏️',
+            emoji: '📝',
             value: 'docs'
         },
         feat: {
             description: 'A new feature',
-            emoji: '🎸',
+            emoji: '✨',
             value: 'feat'
         },
         fix: {
@@ -39,12 +41,12 @@ module.exports = {
         },
         refactor: {
             description: 'A code change that neither fixes a bug or adds a feature',
-            emoji: '💡',
+            emoji: '♻',
             value: 'refactor'
         },
         release: {
             description: 'Create a release commit',
-            emoji: '🏹',
+            emoji: '🔖',
             value: 'release'
         },
         style: {
@@ -54,7 +56,7 @@ module.exports = {
         },
         test: {
             description: 'Adding missing tests',
-            emoji: '💍',
+            emoji: '🧪',
             value: 'test'
         },
         messages: {
