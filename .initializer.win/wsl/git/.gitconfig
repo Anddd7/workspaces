@@ -6,12 +6,14 @@ name = Anddd7
 email = anddd7@icloud.com
 [init]
 defaultBranch = main
+templateDir = ~/.git-template
 [core]
 autocrlf = input
 excludesfile = ~/.gitignore_global
-hooksPath = ~/.githooks_global
 [credential]
 helper = store
+[commit]
+gpgsign = true
 
 # [http]
 # proxy = http://proxy:port

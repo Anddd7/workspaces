@@ -1,3 +1,9 @@
 workspaces/**
 
 asdf.index
+
+# ---
+
+# to include files as part initial config
+!.pre-commit-config.yaml
+!changelog.config.js
